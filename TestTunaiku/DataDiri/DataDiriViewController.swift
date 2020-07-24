@@ -23,7 +23,7 @@ class DataDiriViewController: UIViewController {
     @IBOutlet weak var nationalIdTextfield: UITextField!
     @IBOutlet weak var fullnameTextfield: UITextField!
     @IBOutlet weak var bankAccountTextfield: UITextField!
-    @IBOutlet weak var educationTextfield: UITextField! //pickerview
+    @IBOutlet weak var educationTextfield: UITextField!
     @IBOutlet weak var dobTextfield: UITextField!
     @IBOutlet weak var submitButton: UIButton!
 
@@ -31,9 +31,12 @@ class DataDiriViewController: UIViewController {
     let educationArray: [String] = [Education.SD.rawValue, Education.SMP.rawValue, Education.SMA.rawValue,
                                     Education.S1.rawValue, Education.S2.rawValue, Education.S3.rawValue]
     let datePicker = UIDatePicker()
+    var presenter: DataDiriViewToPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = DataDiriPresenter(view: self)
+        presenter?.didLoad()
         setupDelegation()
         setupView()
     }
@@ -90,7 +93,6 @@ class DataDiriViewController: UIViewController {
     }
 
     @objc func previousTapped() {
-        print("previous tapped")
         educationTextfield.becomeFirstResponder()
     }
 
@@ -99,33 +101,21 @@ class DataDiriViewController: UIViewController {
     }
 }
 
+extension DataDiriViewController: DataDiriPresenterToView {
+
+}
+
 extension DataDiriViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == nationalIdTextfield {
-            let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
-            let compSepByCharInSet = string.components(separatedBy: aSet)
-            let numberFiltered = compSepByCharInSet.joined(separator: "")
-            if textField.text?.count ?? 0 < 16 {
-                return string == numberFiltered
-            } else {
-                return false
-            }
+            guard let text = textField.text else { return false }
+            return presenter?.validateNumber(replacementString: string, textCount: text.count) ?? false
         } else if textField == fullnameTextfield {
-            let letters = CharacterSet.letters
-            let whitespaces = CharacterSet.whitespaces
-            let characterSet = CharacterSet(charactersIn: string)
-            if textField.text?.count ?? 0 < 10 {
-                return letters.isSuperset(of: characterSet) || whitespaces.isSuperset(of: characterSet)
-            } else {
-                return false
-            }
+            guard let text = textField.text else { return false }
+            return presenter?.validateCharacters(replacementString: string, textCount: text.count) ?? false
         } else if textField == bankAccountTextfield {
-            let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
-            let compSepByCharInSet = string.components(separatedBy: aSet)
-            let numberFiltered = compSepByCharInSet.joined(separator: "")
-            if textField.text?.count ?? 0 < 16  {
-                return string == numberFiltered
-            }
+            guard let text = textField.text else { return false }
+            return presenter?.validateNumber(replacementString: string, textCount: text.count) ?? false
         }
         return false
     }

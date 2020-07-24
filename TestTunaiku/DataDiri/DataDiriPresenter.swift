@@ -21,7 +21,7 @@ class DataDiriPresenter: DataDiriViewToPresenter {
     var view: DataDiriPresenterToView?
     var interactor: DataDiriPresenterToInteractor?
 
-    let educationArray: [String] = [Education.SD.rawValue, Education.SMP.rawValue, Education.SMA.rawValue,
+    var educationArray: [String] = [Education.SD.rawValue, Education.SMP.rawValue, Education.SMA.rawValue,
     Education.S1.rawValue, Education.S2.rawValue, Education.S3.rawValue]
 
     init(view: DataDiriPresenterToView?) {
@@ -29,6 +29,11 @@ class DataDiriPresenter: DataDiriViewToPresenter {
     }
 
     init(interactor: DataDiriPresenterToInteractor?) {
+        self.interactor = interactor
+    }
+
+    init(view: DataDiriPresenterToView?, interactor: DataDiriPresenterToInteractor?) {
+        self.view = view
         self.interactor = interactor
     }
 

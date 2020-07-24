@@ -1,34 +1,56 @@
 //
-//  TestTunaikuTests.swift
+//  DataDiriUnitTest.swift
 //  TestTunaikuTests
 //
 //  Created by Daniel Wijono on 24/07/20.
 //  Copyright © 2020 Daniel Wijono. All rights reserved.
 //
 
-import XCTest
+import Foundation
+import Nimble
+import Quick
 @testable import TestTunaiku
 
-class TestTunaikuTests: XCTestCase {
+class DataDiriViewMock: DataDiriPresenterToView {
+    var presenter: DataDiriViewToPresenter?
+}
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+class DataDiriPresenterMock: DataDiriInteractorToPresenter {
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+}
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+class DataDiriInteractorMock: DataDiriPresenterToInteractor {
+    var presenter: DataDiriInteractorToPresenter?
+}
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+class DataDiriUnitTest: QuickSpec {
+    override func spec() {
+        describe("dataDiriPresenter") {
+            var sut: DataDiriPresenter!
+            var viewMock: DataDiriViewMock!
+            var interactorMock: DataDiriInteractorMock!
+            var educationArrayMock: [String]!
+
+            beforeEach {
+                viewMock = DataDiriViewMock()
+                interactorMock = DataDiriInteractorMock()
+                sut = DataDiriPresenter(view: viewMock, interactor: interactorMock)
+                educationArrayMock = [Education.SD.rawValue, Education.SMP.rawValue, Education.SMA.rawValue,
+                Education.S1.rawValue, Education.S2.rawValue, Education.S3.rawValue]
+                sut.educationArray = educationArrayMock
+            }
+
+            context("numberOfEducationRow function is called") {
+                it("function must run successfully") {
+                    expect(sut.numberOfEducationRow()).to(equal(educationArrayMock.count))
+                }
+            }
+
+            context("titleEducationAt function is called") {
+                it("function must run successfully") {
+                    expect(sut.titleEducationAt(row: 1)).to(equal(educationArrayMock[1]))
+                }
+            }
         }
     }
-
 }

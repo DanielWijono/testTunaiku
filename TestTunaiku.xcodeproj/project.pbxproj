@@ -19,7 +19,7 @@
 		5B5E809D24CADF1C00A04C50 /* DataDiriInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E809C24CADF1C00A04C50 /* DataDiriInteractor.swift */; };
 		5B5E809F24CADF2B00A04C50 /* DataDiriProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E809E24CADF2B00A04C50 /* DataDiriProtocols.swift */; };
 		AEF5DB0B8FD1A28B7736325A /* Pods_TestTunaikuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9D229AEEF7950EA587F3F4 /* Pods_TestTunaikuTests.framework */; };
-		D986AC91B75A2C63720F0974 /* Pods_TestTunaiku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DD628F82DED7EE2F6DA9B8 /* Pods_TestTunaiku.framework */; };
+		D986AC91B75A2C63720F0974 /* Pods_TestTunaiku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DD628F82DED7EE2F6DA9B8 /* Pods_TestTunaiku.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +181,7 @@
 				5B5E808424CA940B00A04C50 /* Sources */,
 				5B5E808524CA940B00A04C50 /* Frameworks */,
 				5B5E808624CA940B00A04C50 /* Resources */,
+				54642F6D8A66A714FBEF19E0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,6 +252,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		54642F6D8A66A714FBEF19E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestTunaikuTests/Pods-TestTunaikuTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestTunaikuTests/Pods-TestTunaikuTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestTunaikuTests/Pods-TestTunaikuTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6EACF3849DE014C183E22530 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

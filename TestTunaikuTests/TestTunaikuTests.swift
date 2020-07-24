@@ -12,7 +12,18 @@ import Quick
 @testable import TestTunaiku
 
 class DataDiriViewMock: DataDiriPresenterToView {
+
     var presenter: DataDiriViewToPresenter?
+    var isGoToAlamatKtpPageCalled = false
+    var isShowSnackbarErrorCalled = false
+
+    func goToAlamatKtpPage() {
+        isGoToAlamatKtpPageCalled = true
+    }
+
+    func showSnackbarError(messsage: String) {
+        isShowSnackbarErrorCalled = false
+    }
 }
 
 class DataDiriUnitTest: QuickSpec {
@@ -75,6 +86,48 @@ class DataDiriUnitTest: QuickSpec {
             context("validateNumbers function is called") {
                 it("test delete if text count already reach maximum( 16 characters ), function must run successfully") {
                     expect(sut.validateNumber(replacementString: "", textCount: 16)).to(equal(true))
+                }
+            }
+
+            context("validateAllField function is called") {
+                it("test happy flow, function must run successfully") {
+                    sut.validateAllField(nationalId: 16, bankAccount: 10, education: 3, dob: 3)
+                    expect(viewMock.isGoToAlamatKtpPageCalled).to(beTrue())
+                }
+            }
+
+            context("validateAllField function is called") {
+                it("test national id failed case, function must run successfully") {
+                    sut.validateAllField(nationalId: 10, bankAccount: 10, education: 3, dob: 3)
+                    expect(viewMock.isShowSnackbarErrorCalled).to(equal(false))
+                }
+            }
+
+            context("validateAllField function is called") {
+                it("test bank account failed case , function must run successfully") {
+                    sut.validateAllField(nationalId: 16, bankAccount: 6, education: 3, dob: 3)
+                    expect(viewMock.isShowSnackbarErrorCalled).to(equal(false))
+                }
+            }
+
+            context("validateAllField function is called") {
+                it("test bank account failed case , function must run successfully") {
+                    sut.validateAllField(nationalId: 16, bankAccount: 6, education: 3, dob: 3)
+                    expect(viewMock.isShowSnackbarErrorCalled).to(equal(false))
+                }
+            }
+
+            context("validateAllField function is called") {
+                it("test education failed case , function must run successfully") {
+                    sut.validateAllField(nationalId: 16, bankAccount: 10, education: 0, dob: 3)
+                    expect(viewMock.isShowSnackbarErrorCalled).to(equal(false))
+                }
+            }
+
+            context("validateAllField function is called") {
+                it("test dob failed case , function must run successfully") {
+                    sut.validateAllField(nationalId: 16, bankAccount: 10, education: 3, dob: 0)
+                    expect(viewMock.isShowSnackbarErrorCalled).to(equal(false))
                 }
             }
         }

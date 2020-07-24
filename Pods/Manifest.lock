@@ -1,16 +1,24 @@
 PODS:
   - IQKeyboardManagerSwift (6.5.5)
+  - Nimble (8.1.1)
+  - Quick (3.0.0)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
+  - Nimble
+  - Quick
 
 SPEC REPOS:
   trunk:
     - IQKeyboardManagerSwift
+    - Nimble
+    - Quick
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
+  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
 
-PODFILE CHECKSUM: 324791de67a003d4f75991b48798a4b80e698aba
+PODFILE CHECKSUM: 2be126312ab1fc615fd120a2ebd4deca9b9ed2e4
 
 COCOAPODS: 1.9.1

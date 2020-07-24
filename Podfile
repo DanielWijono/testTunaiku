@@ -5,7 +5,8 @@ target 'TestTunaiku' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'IQKeyboardManagerSwift'
-
+  pod 'Quick'
+  pod 'Nimble'
   # Pods for TestTunaiku
 
   target 'TestTunaikuTests' do

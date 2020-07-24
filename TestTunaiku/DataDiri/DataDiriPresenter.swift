@@ -49,6 +49,20 @@ class DataDiriPresenter: DataDiriViewToPresenter {
         }
     }
 
+    func validateAllField(nationalId: Int, bankAccount: Int, education: Int, dob: Int) {
+        if nationalId == 16 && bankAccount >= 8 && education > 0 && dob > 0 {
+            view?.goToAlamatKtpPage()
+        } else if nationalId != 16 {
+            view?.showSnackbarError(messsage: "national id must have 16 characters")
+        } else if bankAccount < 8 {
+            view?.showSnackbarError(messsage: "bank account must have minimum 8 characters")
+        } else if education == 0 {
+            view?.showSnackbarError(messsage: "education cannot be empty")
+        } else if dob == 0 {
+            view?.showSnackbarError(messsage: "dob cannot be empty")
+        }
+    }
+
     func numberOfEducationRow() -> Int {
         return educationArray.count
     }

@@ -15,9 +15,13 @@ protocol DataDiriViewToPresenter: class {
     func validateCharacters(replacementString: String, textCount: Int) -> Bool
     func numberOfEducationRow() -> Int
     func titleEducationAt(row: Int) -> String
+    func validateAllField(nationalId: Int, bankAccount: Int, education: Int, dob: Int)
 }
 
 protocol DataDiriPresenterToView: class {
     var presenter: DataDiriViewToPresenter? {get set}
+
+    func goToAlamatKtpPage()
+    func showSnackbarError(messsage: String)
 }
 

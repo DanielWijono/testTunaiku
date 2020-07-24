@@ -17,6 +17,7 @@
 		5B5E809824CAA98600A04C50 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E809724CAA98600A04C50 /* UserDefault.swift */; };
 		5B5E809B24CADF0900A04C50 /* DataDiriPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E809A24CADF0800A04C50 /* DataDiriPresenter.swift */; };
 		5B5E809F24CADF2B00A04C50 /* DataDiriProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E809E24CADF2B00A04C50 /* DataDiriProtocols.swift */; };
+		5B5E80A824CB147E00A04C50 /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E80A724CB147E00A04C50 /* SnackbarView.swift */; };
 		AEF5DB0B8FD1A28B7736325A /* Pods_TestTunaikuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9D229AEEF7950EA587F3F4 /* Pods_TestTunaikuTests.framework */; };
 		D986AC91B75A2C63720F0974 /* Pods_TestTunaiku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DD628F82DED7EE2F6DA9B8 /* Pods_TestTunaiku.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		5B5E809724CAA98600A04C50 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		5B5E809A24CADF0800A04C50 /* DataDiriPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDiriPresenter.swift; sourceTree = "<group>"; };
 		5B5E809E24CADF2B00A04C50 /* DataDiriProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDiriProtocols.swift; sourceTree = "<group>"; };
+		5B5E80A724CB147E00A04C50 /* SnackbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
 		91DD628F82DED7EE2F6DA9B8 /* Pods_TestTunaiku.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestTunaiku.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BFAD47E825812C7F4144F6 /* Pods-TestTunaiku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTunaiku.debug.xcconfig"; path = "Target Support Files/Pods-TestTunaiku/Pods-TestTunaiku.debug.xcconfig"; sourceTree = "<group>"; };
 		CE1D34A412BDFE86A7A0C37E /* Pods-TestTunaiku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTunaiku.release.xcconfig"; path = "Target Support Files/Pods-TestTunaiku/Pods-TestTunaiku.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		5B5E807424CA940500A04C50 /* TestTunaiku */ = {
 			isa = PBXGroup;
 			children = (
+				5B5E80A624CB13CF00A04C50 /* Snackbar */,
 				5B5E809924CADEF400A04C50 /* DataDiri */,
 				5B5E807524CA940500A04C50 /* AppDelegate.swift */,
 				5B5E807724CA940500A04C50 /* SceneDelegate.swift */,
@@ -135,6 +138,14 @@
 				5B5E809E24CADF2B00A04C50 /* DataDiriProtocols.swift */,
 			);
 			path = DataDiri;
+			sourceTree = "<group>";
+		};
+		5B5E80A624CB13CF00A04C50 /* Snackbar */ = {
+			isa = PBXGroup;
+			children = (
+				5B5E80A724CB147E00A04C50 /* SnackbarView.swift */,
+			);
+			path = Snackbar;
 			sourceTree = "<group>";
 		};
 		C23BADDBF1CD3D542260D8BF /* Pods */ = {
@@ -338,6 +349,7 @@
 				5B5E809824CAA98600A04C50 /* UserDefault.swift in Sources */,
 				5B5E807A24CA940500A04C50 /* DataDiriViewController.swift in Sources */,
 				5B5E807624CA940500A04C50 /* AppDelegate.swift in Sources */,
+				5B5E80A824CB147E00A04C50 /* SnackbarView.swift in Sources */,
 				5B5E809F24CADF2B00A04C50 /* DataDiriProtocols.swift in Sources */,
 				5B5E807824CA940500A04C50 /* SceneDelegate.swift in Sources */,
 			);

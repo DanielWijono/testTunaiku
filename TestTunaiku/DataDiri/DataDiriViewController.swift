@@ -70,7 +70,12 @@ class DataDiriViewController: UIViewController {
     }
 
     @objc func submitButtonClicked() {
-        print("submit button")
+        guard let nationalIdCount = nationalIdTextfield.text?.count else { return }
+        guard let bankAccountCount = bankAccountTextfield.text?.count else { return }
+        guard let educationCount = educationTextfield.text?.count else { return }
+        guard let dobCount = dobTextfield.text?.count else { return }
+
+        presenter?.validateAllField(nationalId: nationalIdCount, bankAccount: bankAccountCount, education: educationCount, dob: dobCount)
     }
 
     @objc func doneDobTapped() {
@@ -91,6 +96,16 @@ class DataDiriViewController: UIViewController {
 
 extension DataDiriViewController: DataDiriPresenterToView {
 
+    func goToAlamatKtpPage() {
+        print(#function)
+    }
+
+    func showSnackbarError(messsage: String) {
+        var snackBar = SnackbarView()
+        snackBar = SnackbarView(frame: self.view.frame)
+        self.view.addSubview(snackBar)
+        snackBar.showSnackbar(message: messsage)
+    }
 }
 
 extension DataDiriViewController: UITextFieldDelegate {

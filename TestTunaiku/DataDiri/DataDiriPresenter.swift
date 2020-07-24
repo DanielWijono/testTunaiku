@@ -19,26 +19,12 @@ enum Education: String {
 
 class DataDiriPresenter: DataDiriViewToPresenter {
     var view: DataDiriPresenterToView?
-    var interactor: DataDiriPresenterToInteractor?
 
     var educationArray: [String] = [Education.SD.rawValue, Education.SMP.rawValue, Education.SMA.rawValue,
     Education.S1.rawValue, Education.S2.rawValue, Education.S3.rawValue]
 
     init(view: DataDiriPresenterToView?) {
         self.view = view
-    }
-
-    init(interactor: DataDiriPresenterToInteractor?) {
-        self.interactor = interactor
-    }
-
-    init(view: DataDiriPresenterToView?, interactor: DataDiriPresenterToInteractor?) {
-        self.view = view
-        self.interactor = interactor
-    }
-
-    func didLoad() {
-        interactor = DataDiriInteractor(presenter: self)
     }
 
     func validateNumber(replacementString: String, textCount: Int) -> Bool {
@@ -70,8 +56,4 @@ class DataDiriPresenter: DataDiriViewToPresenter {
     func titleEducationAt(row: Int) -> String {
         return educationArray[row]
     }
-}
-
-extension DataDiriPresenter: DataDiriInteractorToPresenter {
-    
 }

@@ -25,7 +25,6 @@ class DataDiriViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = DataDiriPresenter(view: self)
-        presenter?.didLoad()
         setupDelegation()
         setupView()
     }

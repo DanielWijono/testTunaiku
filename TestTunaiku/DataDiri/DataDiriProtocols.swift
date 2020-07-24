@@ -10,9 +10,7 @@ import Foundation
 
 protocol DataDiriViewToPresenter: class {
     var view: DataDiriPresenterToView? {get set}
-    var interactor: DataDiriPresenterToInteractor? {get set}
 
-    func didLoad()
     func validateNumber(replacementString: String, textCount: Int) -> Bool
     func validateCharacters(replacementString: String, textCount: Int) -> Bool
     func numberOfEducationRow() -> Int
@@ -21,13 +19,5 @@ protocol DataDiriViewToPresenter: class {
 
 protocol DataDiriPresenterToView: class {
     var presenter: DataDiriViewToPresenter? {get set}
-}
-
-protocol DataDiriPresenterToInteractor: class {
-    var presenter: DataDiriInteractorToPresenter? {get set}
-}
-
-protocol DataDiriInteractorToPresenter: class {
-
 }
 

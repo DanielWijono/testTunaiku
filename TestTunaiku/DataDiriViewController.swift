@@ -20,6 +20,7 @@ class DataDiriViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupDelegation()
     }
 
     func setupView() {
@@ -32,22 +33,65 @@ class DataDiriViewController: UIViewController {
 
         nationalIdTextfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: nationalIdTextfield.frame.height))
         nationalIdTextfield.leftViewMode = .always
+        nationalIdTextfield.keyboardType = .numberPad
 
         fullnameTextfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: fullnameTextfield.frame.height))
         fullnameTextfield.leftViewMode = .always
 
         bankAccountTextfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: bankAccountTextfield.frame.height))
         bankAccountTextfield.leftViewMode = .always
+        bankAccountTextfield.keyboardType = .numberPad
 
         educationTextfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: educationTextfield.frame.height))
         educationTextfield.leftViewMode = .always
+        //should be calling pickerview
 
         dobTextfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: dobTextfield.frame.height))
         dobTextfield.leftViewMode = .always
+        //should be calling pickerview
+    }
+
+    func setupDelegation() {
+        nationalIdTextfield.delegate = self
+        fullnameTextfield.delegate = self
+        bankAccountTextfield.delegate = self
+        educationTextfield.delegate = self
     }
 
     @objc func submitButtonClicked() {
         print("submit button")
+    }
+}
+
+extension DataDiriViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == nationalIdTextfield {
+            let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
+            let compSepByCharInSet = string.components(separatedBy: aSet)
+            let numberFiltered = compSepByCharInSet.joined(separator: "")
+            if textField.text?.count ?? 0 < 16 {
+                return string == numberFiltered
+            } else {
+                return false
+            }
+        } else if textField == fullnameTextfield {
+            let letters = CharacterSet.letters
+            let whitespaces = CharacterSet.whitespaces
+            let characterSet = CharacterSet(charactersIn: string)
+            if textField.text?.count ?? 0 < 10 {
+                return letters.isSuperset(of: characterSet) || whitespaces.isSuperset(of: characterSet)
+            } else {
+                return false
+            }
+        } else if textField == bankAccountTextfield {
+            let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
+            let compSepByCharInSet = string.components(separatedBy: aSet)
+            let numberFiltered = compSepByCharInSet.joined(separator: "")
+            if textField.text?.count ?? 0 < 16  {
+                return string == numberFiltered
+            }
+        }
+        return false
     }
 }
 

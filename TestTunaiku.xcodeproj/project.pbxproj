@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		5B5E807F24CA940B00A04C50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E807E24CA940B00A04C50 /* Assets.xcassets */; };
 		5B5E808224CA940B00A04C50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E808024CA940B00A04C50 /* LaunchScreen.storyboard */; };
 		5B5E808D24CA940B00A04C50 /* TestTunaikuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E808C24CA940B00A04C50 /* TestTunaikuTests.swift */; };
+		5B5E809824CAA98600A04C50 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E809724CAA98600A04C50 /* UserDefault.swift */; };
 		AEF5DB0B8FD1A28B7736325A /* Pods_TestTunaikuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9D229AEEF7950EA587F3F4 /* Pods_TestTunaikuTests.framework */; };
 		D986AC91B75A2C63720F0974 /* Pods_TestTunaiku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DD628F82DED7EE2F6DA9B8 /* Pods_TestTunaiku.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		5B5E808824CA940B00A04C50 /* TestTunaikuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTunaikuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5E808C24CA940B00A04C50 /* TestTunaikuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTunaikuTests.swift; sourceTree = "<group>"; };
 		5B5E808E24CA940B00A04C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B5E809724CAA98600A04C50 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		91DD628F82DED7EE2F6DA9B8 /* Pods_TestTunaiku.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestTunaiku.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BFAD47E825812C7F4144F6 /* Pods-TestTunaiku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTunaiku.debug.xcconfig"; path = "Target Support Files/Pods-TestTunaiku/Pods-TestTunaiku.debug.xcconfig"; sourceTree = "<group>"; };
 		CE1D34A412BDFE86A7A0C37E /* Pods-TestTunaiku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTunaiku.release.xcconfig"; path = "Target Support Files/Pods-TestTunaiku/Pods-TestTunaiku.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				5B5E807E24CA940B00A04C50 /* Assets.xcassets */,
 				5B5E808024CA940B00A04C50 /* LaunchScreen.storyboard */,
 				5B5E808324CA940B00A04C50 /* Info.plist */,
+				5B5E809724CAA98600A04C50 /* UserDefault.swift */,
 			);
 			path = TestTunaiku;
 			sourceTree = "<group>";
@@ -128,7 +131,6 @@
 				26E30130B3BECBB05A841FF7 /* Pods-TestTunaikuTests.debug.xcconfig */,
 				4FCE8CFE7E92F07054E676B0 /* Pods-TestTunaikuTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -300,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B5E809824CAA98600A04C50 /* UserDefault.swift in Sources */,
 				5B5E807A24CA940500A04C50 /* DataDiriViewController.swift in Sources */,
 				5B5E807624CA940500A04C50 /* AppDelegate.swift in Sources */,
 				5B5E807824CA940500A04C50 /* SceneDelegate.swift in Sources */,

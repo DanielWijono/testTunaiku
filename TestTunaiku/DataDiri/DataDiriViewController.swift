@@ -9,15 +9,6 @@
 import UIKit
 import IQKeyboardManagerSwift
 
-enum Education: String {
-    case SD
-    case SMP
-    case SMA
-    case S1
-    case S2
-    case S3
-}
-
 class DataDiriViewController: UIViewController {
     @IBOutlet weak var dataDiriTitle: UILabel!
     @IBOutlet weak var nationalIdTextfield: UITextField!
@@ -28,8 +19,6 @@ class DataDiriViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
 
     let pickerViewEducation = UIPickerView()
-    let educationArray: [String] = [Education.SD.rawValue, Education.SMP.rawValue, Education.SMA.rawValue,
-                                    Education.S1.rawValue, Education.S2.rawValue, Education.S3.rawValue]
     let datePicker = UIDatePicker()
     var presenter: DataDiriViewToPresenter?
 
@@ -127,15 +116,15 @@ extension DataDiriViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return educationArray.count
+        return presenter?.numberOfEducationRow() ?? 0
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return educationArray[row]
+        return presenter?.titleEducationAt(row: row)
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        educationTextfield.text = educationArray[row]
+        educationTextfield.text = presenter?.titleEducationAt(row: row)
     }
 }
 

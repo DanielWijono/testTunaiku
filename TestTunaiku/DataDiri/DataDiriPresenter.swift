@@ -8,10 +8,21 @@
 
 import Foundation
 
+enum Education: String {
+    case SD
+    case SMP
+    case SMA
+    case S1
+    case S2
+    case S3
+}
+
 class DataDiriPresenter: DataDiriViewToPresenter {
     var view: DataDiriPresenterToView?
-
     var interactor: DataDiriPresenterToInteractor?
+
+    let educationArray: [String] = [Education.SD.rawValue, Education.SMP.rawValue, Education.SMA.rawValue,
+    Education.S1.rawValue, Education.S2.rawValue, Education.S3.rawValue]
 
     init(view: DataDiriPresenterToView?) {
         self.view = view
@@ -45,6 +56,14 @@ class DataDiriPresenter: DataDiriViewToPresenter {
         } else {
             return false
         }
+    }
+
+    func numberOfEducationRow() -> Int {
+        return educationArray.count
+    }
+
+    func titleEducationAt(row: Int) -> String {
+        return educationArray[row]
     }
 }
 

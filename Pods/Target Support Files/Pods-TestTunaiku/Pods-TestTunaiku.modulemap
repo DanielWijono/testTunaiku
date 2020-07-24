@@ -1,0 +1,6 @@
+framework module Pods_TestTunaiku {
+  umbrella header "Pods-TestTunaiku-umbrella.h"
+
+  export *
+  module * { export * }
+}

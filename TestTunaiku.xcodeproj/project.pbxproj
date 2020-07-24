@@ -14,6 +14,8 @@
 		5B5E807F24CA940B00A04C50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E807E24CA940B00A04C50 /* Assets.xcassets */; };
 		5B5E808224CA940B00A04C50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E808024CA940B00A04C50 /* LaunchScreen.storyboard */; };
 		5B5E808D24CA940B00A04C50 /* TestTunaikuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E808C24CA940B00A04C50 /* TestTunaikuTests.swift */; };
+		AEF5DB0B8FD1A28B7736325A /* Pods_TestTunaikuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9D229AEEF7950EA587F3F4 /* Pods_TestTunaikuTests.framework */; };
+		D986AC91B75A2C63720F0974 /* Pods_TestTunaiku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DD628F82DED7EE2F6DA9B8 /* Pods_TestTunaiku.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26E30130B3BECBB05A841FF7 /* Pods-TestTunaikuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTunaikuTests.debug.xcconfig"; path = "Target Support Files/Pods-TestTunaikuTests/Pods-TestTunaikuTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A9D229AEEF7950EA587F3F4 /* Pods_TestTunaikuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestTunaikuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FCE8CFE7E92F07054E676B0 /* Pods-TestTunaikuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTunaikuTests.release.xcconfig"; path = "Target Support Files/Pods-TestTunaikuTests/Pods-TestTunaikuTests.release.xcconfig"; sourceTree = "<group>"; };
 		5B5E807224CA940500A04C50 /* TestTunaiku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTunaiku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5E807524CA940500A04C50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B5E807724CA940500A04C50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +43,9 @@
 		5B5E808824CA940B00A04C50 /* TestTunaikuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTunaikuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5E808C24CA940B00A04C50 /* TestTunaikuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTunaikuTests.swift; sourceTree = "<group>"; };
 		5B5E808E24CA940B00A04C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91DD628F82DED7EE2F6DA9B8 /* Pods_TestTunaiku.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestTunaiku.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6BFAD47E825812C7F4144F6 /* Pods-TestTunaiku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTunaiku.debug.xcconfig"; path = "Target Support Files/Pods-TestTunaiku/Pods-TestTunaiku.debug.xcconfig"; sourceTree = "<group>"; };
+		CE1D34A412BDFE86A7A0C37E /* Pods-TestTunaiku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTunaiku.release.xcconfig"; path = "Target Support Files/Pods-TestTunaiku/Pods-TestTunaiku.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D986AC91B75A2C63720F0974 /* Pods_TestTunaiku.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +61,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF5DB0B8FD1A28B7736325A /* Pods_TestTunaikuTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040137BF61345052A118F3FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91DD628F82DED7EE2F6DA9B8 /* Pods_TestTunaiku.framework */,
+				4A9D229AEEF7950EA587F3F4 /* Pods_TestTunaikuTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5B5E806924CA940500A04C50 = {
 			isa = PBXGroup;
 			children = (
 				5B5E807424CA940500A04C50 /* TestTunaiku */,
 				5B5E808B24CA940B00A04C50 /* TestTunaikuTests */,
 				5B5E807324CA940500A04C50 /* Products */,
+				C23BADDBF1CD3D542260D8BF /* Pods */,
+				040137BF61345052A118F3FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +120,18 @@
 			path = TestTunaikuTests;
 			sourceTree = "<group>";
 		};
+		C23BADDBF1CD3D542260D8BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A6BFAD47E825812C7F4144F6 /* Pods-TestTunaiku.debug.xcconfig */,
+				CE1D34A412BDFE86A7A0C37E /* Pods-TestTunaiku.release.xcconfig */,
+				26E30130B3BECBB05A841FF7 /* Pods-TestTunaikuTests.debug.xcconfig */,
+				4FCE8CFE7E92F07054E676B0 /* Pods-TestTunaikuTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B5E809124CA940B00A04C50 /* Build configuration list for PBXNativeTarget "TestTunaiku" */;
 			buildPhases = (
+				6EACF3849DE014C183E22530 /* [CP] Check Pods Manifest.lock */,
 				5B5E806E24CA940500A04C50 /* Sources */,
 				5B5E806F24CA940500A04C50 /* Frameworks */,
 				5B5E807024CA940500A04C50 /* Resources */,
+				7BB9028325F56AAF9472C14F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +158,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B5E809424CA940B00A04C50 /* Build configuration list for PBXNativeTarget "TestTunaikuTests" */;
 			buildPhases = (
+				F5616B361CA17069D7EE5B8A /* [CP] Check Pods Manifest.lock */,
 				5B5E808424CA940B00A04C50 /* Sources */,
 				5B5E808524CA940B00A04C50 /* Frameworks */,
 				5B5E808624CA940B00A04C50 /* Resources */,
@@ -194,6 +230,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6EACF3849DE014C183E22530 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestTunaiku-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BB9028325F56AAF9472C14F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestTunaiku/Pods-TestTunaiku-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestTunaiku/Pods-TestTunaiku-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestTunaiku/Pods-TestTunaiku-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5616B361CA17069D7EE5B8A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestTunaikuTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B5E806E24CA940500A04C50 /* Sources */ = {
@@ -360,6 +460,7 @@
 		};
 		5B5E809224CA940B00A04C50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6BFAD47E825812C7F4144F6 /* Pods-TestTunaiku.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +479,7 @@
 		};
 		5B5E809324CA940B00A04C50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE1D34A412BDFE86A7A0C37E /* Pods-TestTunaiku.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -396,6 +498,7 @@
 		};
 		5B5E809524CA940B00A04C50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26E30130B3BECBB05A841FF7 /* Pods-TestTunaikuTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -418,6 +521,7 @@
 		};
 		5B5E809624CA940B00A04C50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FCE8CFE7E92F07054E676B0 /* Pods-TestTunaikuTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

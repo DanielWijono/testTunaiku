@@ -7,6 +7,16 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
+
+enum Education: String {
+    case SD
+    case SMP
+    case SMA
+    case S1
+    case S2
+    case S3
+}
 
 class DataDiriViewController: UIViewController {
     @IBOutlet weak var dataDiriTitle: UILabel!
@@ -17,10 +27,15 @@ class DataDiriViewController: UIViewController {
     @IBOutlet weak var dobTextfield: UITextField!
     @IBOutlet weak var submitButton: UIButton!
 
+    let pickerViewEducation = UIPickerView()
+    let educationArray: [String] = [Education.SD.rawValue, Education.SMP.rawValue, Education.SMA.rawValue,
+                                    Education.S1.rawValue, Education.S2.rawValue, Education.S3.rawValue]
+    let datePicker = UIDatePicker()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
         setupDelegation()
+        setupView()
     }
 
     func setupView() {
@@ -44,11 +59,15 @@ class DataDiriViewController: UIViewController {
 
         educationTextfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: educationTextfield.frame.height))
         educationTextfield.leftViewMode = .always
-        //should be calling pickerview
+        educationTextfield.inputView = pickerViewEducation
 
         dobTextfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: dobTextfield.frame.height))
         dobTextfield.leftViewMode = .always
-        //should be calling pickerview
+        dobTextfield.inputView = datePicker
+        datePicker.datePickerMode = .date
+
+        dobTextfield.addDoneOnKeyboardWithTarget(self, action: #selector(doneDobTapped))
+        dobTextfield.addPreviousNextDoneOnKeyboardWithTarget(self, previousAction: #selector(previousTapped), nextAction: #selector(nextTapped), doneAction: #selector(doneDobTapped), shouldShowPlaceholder: true)
     }
 
     func setupDelegation() {
@@ -56,10 +75,27 @@ class DataDiriViewController: UIViewController {
         fullnameTextfield.delegate = self
         bankAccountTextfield.delegate = self
         educationTextfield.delegate = self
+        pickerViewEducation.delegate = self
     }
 
     @objc func submitButtonClicked() {
         print("submit button")
+    }
+
+    @objc func doneDobTapped() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-YYYY"
+        dobTextfield.text = formatter.string(from: datePicker.date)
+        view.endEditing(true)
+    }
+
+    @objc func previousTapped() {
+        print("previous tapped")
+        educationTextfield.becomeFirstResponder()
+    }
+
+    @objc func nextTapped() {
+        view.endEditing(true)
     }
 }
 
@@ -92,6 +128,24 @@ extension DataDiriViewController: UITextFieldDelegate {
             }
         }
         return false
+    }
+}
+
+extension DataDiriViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return educationArray.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return educationArray[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        educationTextfield.text = educationArray[row]
     }
 }
 

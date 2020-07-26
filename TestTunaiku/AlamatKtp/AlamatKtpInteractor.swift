@@ -7,11 +7,22 @@
 //
 
 import Foundation
+import Alamofire
 
 class AlamatKtpInteractor: AlamatKtpPresenterToInteractor {
     var presenter: AlamatKtpInteractorToPresenter?
 
     init(presenter: AlamatKtpInteractorToPresenter?) {
         self.presenter = presenter
+    }
+
+    func getProvince() {
+        AF.request("https://dev.farizdotid.com/api/daerahindonesia/provinsi").responseDecodable(of: ProvinceResponse.self) { (response) in
+            guard let provinceNameArray = response.value?.provinsi else {
+                self.presenter?.failedGetProvince(response: response.error?.errorDescription ?? "Gagal mendapatkan provinsi")
+                return
+            }
+            self.presenter?.successGetProvince(response: provinceNameArray)
+        }
     }
 }

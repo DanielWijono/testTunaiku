@@ -80,6 +80,10 @@ extension AlamatKtpViewController: AlamatKtpPresenterToView {
         pickerViewProvince.reloadAllComponents()
         pickerViewHousing.reloadAllComponents()
     }
+
+    func showSnackbarErrorMessage(error: String) {
+
+    }
 }
 
 extension AlamatKtpViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -90,21 +94,27 @@ extension AlamatKtpViewController: UIPickerViewDelegate, UIPickerViewDataSource 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == pickerViewHousing {
             return presenter?.numberOfHousingRow() ?? 0
-        } //must have else for province picker later
+        } else if pickerView == pickerViewProvince {
+            return presenter?.numberOfProvinceRow() ?? 0
+        }
         return 0
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == pickerViewHousing {
             return presenter?.titleHousingAt(row: row)
-        } //must have else for province picker later
+        } else if pickerView == pickerViewProvince {
+            return presenter?.titleProvinceAt(row: row)
+        }
         return ""
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == pickerViewHousing {
             housingTypeTf.text = presenter?.titleHousingAt(row: row)
-        } //must have else for province picker later
+        } else if pickerView == pickerViewProvince {
+            provinceTf.text = presenter?.titleProvinceAt(row: row)
+        }
     }
 }
 

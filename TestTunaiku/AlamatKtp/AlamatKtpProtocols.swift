@@ -14,18 +14,24 @@ protocol AlamatKtpViewToPresenter: class {
     func numberOfHousingRow() -> Int
     func titleHousingAt(row: Int) -> String
     func didLoad()
+    func numberOfProvinceRow() -> Int
+    func titleProvinceAt(row: Int) -> String
 }
 
 protocol AlamatKtpPresenterToView: class {
     var presenter: AlamatKtpViewToPresenter? {get set}
 
     func pickerViewReloadData()
+    func showSnackbarErrorMessage(error: String)
 }
 
 protocol AlamatKtpPresenterToInteractor: class {
     var presenter: AlamatKtpInteractorToPresenter? {get set}
+
+    func getProvince()
 }
 
 protocol AlamatKtpInteractorToPresenter: class {
-
+    func failedGetProvince(response: String)
+    func successGetProvince(response: [Province])
 }

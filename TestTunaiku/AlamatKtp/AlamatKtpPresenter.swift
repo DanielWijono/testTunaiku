@@ -15,16 +15,24 @@ public enum HousingType: String {
 
 class AlamatKtpPresenter: AlamatKtpViewToPresenter {
     var view: AlamatKtpPresenterToView?
+    var interactor: AlamatKtpPresenterToInteractor?
 
     init(view: AlamatKtpPresenterToView?) {
         self.view = view
     }
 
+    init(interactor: AlamatKtpPresenterToInteractor?) {
+        self.interactor = interactor
+    }
+
     var housingTypeArray: [String] = []
+    var provinceArray: [Province] = []
 
     func didLoad() {
+        interactor = AlamatKtpInteractor(presenter: self)
         housingTypeArray.append(HousingType.Rumah.rawValue)
         housingTypeArray.append(HousingType.Kantor.rawValue)
+        interactor?.getProvince()
         view?.pickerViewReloadData()
     }
 
@@ -38,5 +46,24 @@ class AlamatKtpPresenter: AlamatKtpViewToPresenter {
 
     func titleHousingAt(row: Int) -> String {
         return housingTypeArray[row]
+    }
+
+    func numberOfProvinceRow() -> Int {
+        return provinceArray.count
+    }
+
+    func titleProvinceAt(row: Int) -> String {
+        return provinceArray[row].nama
+    }
+}
+
+extension AlamatKtpPresenter: AlamatKtpInteractorToPresenter {
+    func successGetProvince(response: [Province]) {
+        self.provinceArray = response
+        view?.pickerViewReloadData()
+    }
+
+    func failedGetProvince(response: String) {
+        view?.showSnackbarErrorMessage(error: response)
     }
 }

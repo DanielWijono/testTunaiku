@@ -98,6 +98,9 @@ extension DataDiriViewController: DataDiriPresenterToView {
 
     func goToAlamatKtpPage() {
         print(#function)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "AlamatKtpViewController") as? AlamatKtpViewController else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     func showSnackbarError(messsage: String) {

@@ -10,7 +10,6 @@ import UIKit
 import IQKeyboardManagerSwift
 
 class DataDiriViewController: UIViewController {
-    @IBOutlet weak var dataDiriTitle: UILabel!
     @IBOutlet weak var nationalIdTextfield: UITextField!
     @IBOutlet weak var fullnameTextfield: UITextField!
     @IBOutlet weak var bankAccountTextfield: UITextField!
@@ -36,6 +35,7 @@ class DataDiriViewController: UIViewController {
         educationTextfield.placeholder = "Education"
         dobTextfield.placeholder = "Date of Birth"
         submitButton.addTarget(self, action: #selector(submitButtonClicked), for: .touchUpInside)
+        self.title = "Data Diri Page"
 
         nationalIdTextfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: nationalIdTextfield.frame.height))
         nationalIdTextfield.leftViewMode = .always

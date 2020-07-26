@@ -33,6 +33,7 @@ class AlamatKtpViewController: UIViewController {
         numberAddressTf.placeholder = "No"
         provinceTf.placeholder = "Provinsi"
         submitButton.addTarget(self, action: #selector(submitButtonClicked), for: .touchUpInside)
+        self.title = "Alamat KTP Page"
 
         domicileAddressTf.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: domicileAddressTf.frame.height))
         domicileAddressTf.leftViewMode = .always

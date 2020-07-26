@@ -69,6 +69,18 @@ class AlamatKtpTests: QuickSpec {
                 }
             }
 
+            context("validate length function is called") {
+                it("function must run successfully") {
+                    expect(sut.validateLength(textCount: 100)).to(beTrue())
+                }
+            }
+
+            context("validate length function is called") {
+                it("function must run successfully") {
+                    expect(sut.validateLength(textCount: 200)).to(beFalse())
+                }
+            }
+
             context("numberOfHousingRow function is called") {
                 it("function must run successfully") {
                     expect(sut.numberOfHousingRow()).to(equal(housingTypeMock.count))

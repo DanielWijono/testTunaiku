@@ -55,7 +55,7 @@ class AlamatKtpTests: QuickSpec {
                 interactorMock = AlamatKtpInteractorMock()
                 housingTypeMock = [HousingType.Rumah.rawValue, HousingType.Kantor.rawValue]
                 provinceMock = [Province(nama: "Aceh"), Province(nama: "Surabaya")]
-                sut = AlamatKtpPresenter(view: viewMock, interactor: interactorMock)
+                sut = AlamatKtpPresenter()
                 sut.view = viewMock
                 sut.interactor = interactorMock
                 sut.housingTypeArray = housingTypeMock
@@ -65,6 +65,7 @@ class AlamatKtpTests: QuickSpec {
             context("numberOfEducationRow function is called") {
                 it("function must run successfully") {
                     sut.didLoad()
+                    expect(interactorMock.isGetProvinceCalled).to(beTrue())
                     expect(viewMock.isPickerViewReloadDataCalled).to(beTrue())
                 }
             }

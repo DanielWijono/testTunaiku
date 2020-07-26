@@ -21,10 +21,20 @@ class AlamatKtpViewController: UIViewController {
     var presenter: AlamatKtpViewToPresenter?
 
     override func viewDidLoad() {
-        presenter = AlamatKtpPresenter(view: self)
+        dependencyInjection()
         setupDelegation()
-        presenter?.didLoad()
         setupView()
+    }
+
+    func dependencyInjection() {
+        let view = self
+        let presenter = AlamatKtpPresenter()
+        let interactor = AlamatKtpInteractor()
+        view.presenter = presenter
+        presenter.view = view
+        presenter.interactor = interactor
+        interactor.presenter = presenter
+        presenter.didLoad()
     }
 
     func setupView() {

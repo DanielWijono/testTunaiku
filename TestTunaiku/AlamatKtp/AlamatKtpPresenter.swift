@@ -17,25 +17,13 @@ class AlamatKtpPresenter: AlamatKtpViewToPresenter {
     var view: AlamatKtpPresenterToView?
     var interactor: AlamatKtpPresenterToInteractor?
 
-    init(view: AlamatKtpPresenterToView?) {
-        self.view = view
-    }
-
-    init(interactor: AlamatKtpPresenterToInteractor?) {
-        self.interactor = interactor
-    }
-
-    init(view: AlamatKtpPresenterToView?, interactor: AlamatKtpPresenterToInteractor?) {
-        self.view = view
-        self.interactor = interactor
-    }
+    init() { }
 
     var housingTypeArray: [String] = [HousingType.Rumah.rawValue, HousingType.Kantor.rawValue]
     var provinceArray: [Province] = []
     var alamatKtpEntity: AlamatKtpEntity = AlamatKtpEntity()
 
     func didLoad() {
-        interactor = AlamatKtpInteractor(presenter: self)
         interactor?.getProvince()
         view?.pickerViewReloadData()
     }

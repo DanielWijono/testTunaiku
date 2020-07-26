@@ -16,6 +16,7 @@ protocol AlamatKtpViewToPresenter: class {
     func didLoad()
     func numberOfProvinceRow() -> Int
     func titleProvinceAt(row: Int) -> String
+    func validateAllField(domicile: String, housing: String, numberAddress: String, province: String)
 }
 
 protocol AlamatKtpPresenterToView: class {
@@ -23,6 +24,7 @@ protocol AlamatKtpPresenterToView: class {
 
     func pickerViewReloadData()
     func showSnackbarErrorMessage(error: String)
+    func navigateToReviewDataPage()
 }
 
 protocol AlamatKtpPresenterToInteractor: class {

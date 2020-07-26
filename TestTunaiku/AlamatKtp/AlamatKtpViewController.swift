@@ -25,7 +25,6 @@ class AlamatKtpViewController: UIViewController {
         setupDelegation()
         presenter?.didLoad()
         setupView()
-
     }
 
     func setupView() {
@@ -42,7 +41,6 @@ class AlamatKtpViewController: UIViewController {
         housingTypeTf.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: housingTypeTf.frame.height))
         housingTypeTf.leftViewMode = .always
         housingTypeTf.inputView = pickerViewHousing
-        //picker view
 
         numberAddressTf.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: numberAddressTf.frame.height))
         numberAddressTf.leftViewMode = .always
@@ -51,7 +49,6 @@ class AlamatKtpViewController: UIViewController {
         provinceTf.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: provinceTf.frame.height))
         provinceTf.leftViewMode = .always
         provinceTf.inputView = pickerViewProvince
-        //picker view
     }
 
     func setupDelegation() {
@@ -66,12 +63,12 @@ class AlamatKtpViewController: UIViewController {
     }
 
     @objc func submitButtonClicked() {
-        //        guard let nationalIdCount = nationalIdTextfield.text?.count else { return }
-        //        guard let bankAccountCount = bankAccountTextfield.text?.count else { return }
-        //        guard let educationCount = educationTextfield.text?.count else { return }
-        //        guard let dobCount = dobTextfield.text?.count else { return }
-        //
-        //        presenter?.validateAllField(nationalId: nationalIdCount, bankAccount: bankAccountCount, education: educationCount, dob: dobCount)
+        guard let domicileText = domicileAddressTf.text else { return }
+        guard let housingText = housingTypeTf.text else { return }
+        guard let numberAddressText = numberAddressTf.text else { return }
+        guard let provinceText = provinceTf.text else { return }
+
+        presenter?.validateAllField(domicile: domicileText, housing: housingText, numberAddress: numberAddressText, province: provinceText)
     }
 }
 
@@ -82,7 +79,14 @@ extension AlamatKtpViewController: AlamatKtpPresenterToView {
     }
 
     func showSnackbarErrorMessage(error: String) {
+        var snackBar = SnackbarView()
+        snackBar = SnackbarView(frame: self.view.frame)
+        self.view.addSubview(snackBar)
+        snackBar.showSnackbar(message: error)
+    }
 
+    func navigateToReviewDataPage() {
+        print(#function)
     }
 }
 

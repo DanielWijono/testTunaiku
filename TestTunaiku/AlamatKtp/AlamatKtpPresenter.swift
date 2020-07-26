@@ -55,6 +55,29 @@ class AlamatKtpPresenter: AlamatKtpViewToPresenter {
     func titleProvinceAt(row: Int) -> String {
         return provinceArray[row].nama
     }
+
+    func validateAlphaNumeric(text: String) -> Bool {
+        let hasLetters = text.rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
+        let hasNumbers = text.rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
+        let comps = text.components(separatedBy: .alphanumerics)
+        return comps.joined(separator: "").count == 0 && hasLetters && hasNumbers
+    }
+
+    func validateAllField(domicile: String, housing: String, numberAddress: String, province: String) {
+        if domicile.count > 0 && domicile.count <= 100 && housing.count > 0 && numberAddress.count > 0 && validateAlphaNumeric(text: numberAddress) && province.count > 0 {
+            view?.navigateToReviewDataPage()
+        } else if domicile.isEmpty {
+            view?.showSnackbarErrorMessage(error: "domicile cannot be empty")
+        } else if housing.isEmpty {
+            view?.showSnackbarErrorMessage(error: "housing type cannot be empty")
+        } else if numberAddress.isEmpty {
+            view?.showSnackbarErrorMessage(error: "number address cannot be empty")
+        } else if validateAlphaNumeric(text: numberAddress) == false {
+            view?.showSnackbarErrorMessage(error: "number address not alphanumeric")
+        } else if province.isEmpty {
+            view?.showSnackbarErrorMessage(error: "province cannot be empty")
+        }
+    }
 }
 
 extension AlamatKtpPresenter: AlamatKtpInteractorToPresenter {

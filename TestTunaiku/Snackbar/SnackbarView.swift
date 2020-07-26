@@ -55,7 +55,7 @@ public class SnackbarView: UIView {
         backgroundView.isHidden = false
         label.text = message
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             self?.hideSnackbar()
         }
     }

@@ -14,7 +14,6 @@
 		5B5E807F24CA940B00A04C50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E807E24CA940B00A04C50 /* Assets.xcassets */; };
 		5B5E808224CA940B00A04C50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B5E808024CA940B00A04C50 /* LaunchScreen.storyboard */; };
 		5B5E808D24CA940B00A04C50 /* TestTunaikuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E808C24CA940B00A04C50 /* TestTunaikuTests.swift */; };
-		5B5E809824CAA98600A04C50 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E809724CAA98600A04C50 /* UserDefault.swift */; };
 		5B5E809B24CADF0900A04C50 /* DataDiriPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E809A24CADF0800A04C50 /* DataDiriPresenter.swift */; };
 		5B5E809F24CADF2B00A04C50 /* DataDiriProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E809E24CADF2B00A04C50 /* DataDiriProtocols.swift */; };
 		5B5E80A824CB147E00A04C50 /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E80A724CB147E00A04C50 /* SnackbarView.swift */; };
@@ -24,6 +23,11 @@
 		5B5E80B124CC252D00A04C50 /* AlamatKtpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E80B024CC252D00A04C50 /* AlamatKtpProtocols.swift */; };
 		5B5E80B424CD4A2C00A04C50 /* ProvinceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E80B324CD4A2C00A04C50 /* ProvinceResponse.swift */; };
 		5B5E80B624CD58A300A04C50 /* AlamatKtpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E80B524CD58A300A04C50 /* AlamatKtpTests.swift */; };
+		5B5E80B924CD872B00A04C50 /* CompleteDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E80B824CD872B00A04C50 /* CompleteDataViewController.swift */; };
+		5B5E80BB24CD875D00A04C50 /* CompleteDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E80BA24CD875D00A04C50 /* CompleteDataPresenter.swift */; };
+		5B5E80BD24CD876E00A04C50 /* CompleteDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E80BC24CD876E00A04C50 /* CompleteDataProtocol.swift */; };
+		5B5E80BF24CD8F9F00A04C50 /* DataDiriEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E80BE24CD8F9F00A04C50 /* DataDiriEntity.swift */; };
+		5B5E80C124CD8FAB00A04C50 /* AlamatKtpEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E80C024CD8FAB00A04C50 /* AlamatKtpEntity.swift */; };
 		AEF5DB0B8FD1A28B7736325A /* Pods_TestTunaikuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9D229AEEF7950EA587F3F4 /* Pods_TestTunaikuTests.framework */; };
 		D986AC91B75A2C63720F0974 /* Pods_TestTunaiku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DD628F82DED7EE2F6DA9B8 /* Pods_TestTunaiku.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -53,7 +57,6 @@
 		5B5E808824CA940B00A04C50 /* TestTunaikuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTunaikuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5E808C24CA940B00A04C50 /* TestTunaikuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTunaikuTests.swift; sourceTree = "<group>"; };
 		5B5E808E24CA940B00A04C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B5E809724CAA98600A04C50 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		5B5E809A24CADF0800A04C50 /* DataDiriPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDiriPresenter.swift; sourceTree = "<group>"; };
 		5B5E809E24CADF2B00A04C50 /* DataDiriProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDiriProtocols.swift; sourceTree = "<group>"; };
 		5B5E80A724CB147E00A04C50 /* SnackbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
@@ -63,6 +66,11 @@
 		5B5E80B024CC252D00A04C50 /* AlamatKtpProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamatKtpProtocols.swift; sourceTree = "<group>"; };
 		5B5E80B324CD4A2C00A04C50 /* ProvinceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinceResponse.swift; sourceTree = "<group>"; };
 		5B5E80B524CD58A300A04C50 /* AlamatKtpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamatKtpTests.swift; sourceTree = "<group>"; };
+		5B5E80B824CD872B00A04C50 /* CompleteDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteDataViewController.swift; sourceTree = "<group>"; };
+		5B5E80BA24CD875D00A04C50 /* CompleteDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteDataPresenter.swift; sourceTree = "<group>"; };
+		5B5E80BC24CD876E00A04C50 /* CompleteDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteDataProtocol.swift; sourceTree = "<group>"; };
+		5B5E80BE24CD8F9F00A04C50 /* DataDiriEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDiriEntity.swift; sourceTree = "<group>"; };
+		5B5E80C024CD8FAB00A04C50 /* AlamatKtpEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamatKtpEntity.swift; sourceTree = "<group>"; };
 		91DD628F82DED7EE2F6DA9B8 /* Pods_TestTunaiku.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestTunaiku.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BFAD47E825812C7F4144F6 /* Pods-TestTunaiku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTunaiku.debug.xcconfig"; path = "Target Support Files/Pods-TestTunaiku/Pods-TestTunaiku.debug.xcconfig"; sourceTree = "<group>"; };
 		CE1D34A412BDFE86A7A0C37E /* Pods-TestTunaiku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTunaiku.release.xcconfig"; path = "Target Support Files/Pods-TestTunaiku/Pods-TestTunaiku.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,7 +128,8 @@
 		5B5E807424CA940500A04C50 /* TestTunaiku */ = {
 			isa = PBXGroup;
 			children = (
-				5B5E80B224CD4A1A00A04C50 /* Response */,
+				5B5E80B724CD86EF00A04C50 /* CompleteData */,
+				5B5E80B224CD4A1A00A04C50 /* Entity */,
 				5B5E80A924CC24B700A04C50 /* AlamatKtp */,
 				5B5E80A624CB13CF00A04C50 /* Snackbar */,
 				5B5E809924CADEF400A04C50 /* DataDiri */,
@@ -130,7 +139,6 @@
 				5B5E807E24CA940B00A04C50 /* Assets.xcassets */,
 				5B5E808024CA940B00A04C50 /* LaunchScreen.storyboard */,
 				5B5E808324CA940B00A04C50 /* Info.plist */,
-				5B5E809724CAA98600A04C50 /* UserDefault.swift */,
 			);
 			path = TestTunaiku;
 			sourceTree = "<group>";
@@ -174,12 +182,24 @@
 			path = AlamatKtp;
 			sourceTree = "<group>";
 		};
-		5B5E80B224CD4A1A00A04C50 /* Response */ = {
+		5B5E80B224CD4A1A00A04C50 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
 				5B5E80B324CD4A2C00A04C50 /* ProvinceResponse.swift */,
+				5B5E80BE24CD8F9F00A04C50 /* DataDiriEntity.swift */,
+				5B5E80C024CD8FAB00A04C50 /* AlamatKtpEntity.swift */,
 			);
-			path = Response;
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		5B5E80B724CD86EF00A04C50 /* CompleteData */ = {
+			isa = PBXGroup;
+			children = (
+				5B5E80B824CD872B00A04C50 /* CompleteDataViewController.swift */,
+				5B5E80BA24CD875D00A04C50 /* CompleteDataPresenter.swift */,
+				5B5E80BC24CD876E00A04C50 /* CompleteDataProtocol.swift */,
+			);
+			path = CompleteData;
 			sourceTree = "<group>";
 		};
 		C23BADDBF1CD3D542260D8BF /* Pods */ = {
@@ -380,16 +400,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B5E809B24CADF0900A04C50 /* DataDiriPresenter.swift in Sources */,
-				5B5E809824CAA98600A04C50 /* UserDefault.swift in Sources */,
 				5B5E80B424CD4A2C00A04C50 /* ProvinceResponse.swift in Sources */,
 				5B5E807A24CA940500A04C50 /* DataDiriViewController.swift in Sources */,
+				5B5E80B924CD872B00A04C50 /* CompleteDataViewController.swift in Sources */,
 				5B5E807624CA940500A04C50 /* AppDelegate.swift in Sources */,
 				5B5E80AF24CC251F00A04C50 /* AlamatKtpInteractor.swift in Sources */,
+				5B5E80C124CD8FAB00A04C50 /* AlamatKtpEntity.swift in Sources */,
+				5B5E80BD24CD876E00A04C50 /* CompleteDataProtocol.swift in Sources */,
 				5B5E80A824CB147E00A04C50 /* SnackbarView.swift in Sources */,
 				5B5E809F24CADF2B00A04C50 /* DataDiriProtocols.swift in Sources */,
+				5B5E80BB24CD875D00A04C50 /* CompleteDataPresenter.swift in Sources */,
 				5B5E80AB24CC24F900A04C50 /* AlamatKtpViewController.swift in Sources */,
 				5B5E80B124CC252D00A04C50 /* AlamatKtpProtocols.swift in Sources */,
 				5B5E807824CA940500A04C50 /* SceneDelegate.swift in Sources */,
+				5B5E80BF24CD8F9F00A04C50 /* DataDiriEntity.swift in Sources */,
 				5B5E80AD24CC250F00A04C50 /* AlamatKtpPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

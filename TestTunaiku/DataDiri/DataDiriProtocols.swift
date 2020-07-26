@@ -15,7 +15,7 @@ protocol DataDiriViewToPresenter: class {
     func validateCharacters(replacementString: String, textCount: Int) -> Bool
     func numberOfEducationRow() -> Int
     func titleEducationAt(row: Int) -> String
-    func validateAllField(nationalId: Int, bankAccount: Int, education: Int, dob: Int)
+    func validateAllField(nationalId: String, bankAccount: String, education: String, dob: String, fullname: String)
 }
 
 protocol DataDiriPresenterToView: class {

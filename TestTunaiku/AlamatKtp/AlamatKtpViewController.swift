@@ -88,6 +88,9 @@ extension AlamatKtpViewController: AlamatKtpPresenterToView {
 
     func navigateToReviewDataPage() {
         print(#function)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "CompleteDataViewController") as? CompleteDataViewController else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

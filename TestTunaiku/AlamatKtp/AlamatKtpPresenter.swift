@@ -32,6 +32,7 @@ class AlamatKtpPresenter: AlamatKtpViewToPresenter {
 
     var housingTypeArray: [String] = [HousingType.Rumah.rawValue, HousingType.Kantor.rawValue]
     var provinceArray: [Province] = []
+    var alamatKtpEntity: AlamatKtpEntity = AlamatKtpEntity()
 
     func didLoad() {
         interactor = AlamatKtpInteractor(presenter: self)
@@ -68,6 +69,12 @@ class AlamatKtpPresenter: AlamatKtpViewToPresenter {
 
     func validateAllField(domicile: String, housing: String, numberAddress: String, province: String) {
         if domicile.count > 0 && domicile.count <= 100 && housing.count > 0 && numberAddress.count > 0 && validateAlphaNumeric(text: numberAddress) && province.count > 0 {
+            alamatKtpEntity.domicile = domicile
+            alamatKtpEntity.housingType = housing
+            alamatKtpEntity.numberAddress = numberAddress
+            alamatKtpEntity.province = province
+            let dataEncoded = try? JSONEncoder().encode(alamatKtpEntity)
+            UserDefaults.standard.set(dataEncoded, forKey: "alamatKtpEntity")
             view?.navigateToReviewDataPage()
         } else if domicile.isEmpty {
             view?.showSnackbarErrorMessage(error: "domicile cannot be empty")

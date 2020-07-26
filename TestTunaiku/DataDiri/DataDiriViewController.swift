@@ -70,12 +70,13 @@ class DataDiriViewController: UIViewController {
     }
 
     @objc func submitButtonClicked() {
-        guard let nationalIdCount = nationalIdTextfield.text?.count else { return }
-        guard let bankAccountCount = bankAccountTextfield.text?.count else { return }
-        guard let educationCount = educationTextfield.text?.count else { return }
-        guard let dobCount = dobTextfield.text?.count else { return }
+        guard let nationalId = nationalIdTextfield.text else { return }
+        guard let bankAccount = bankAccountTextfield.text else { return }
+        guard let education = educationTextfield.text else { return }
+        guard let dob = dobTextfield.text else { return }
+        guard let fullname = fullnameTextfield.text else { return }
 
-        presenter?.validateAllField(nationalId: nationalIdCount, bankAccount: bankAccountCount, education: educationCount, dob: dobCount)
+        presenter?.validateAllField(nationalId: nationalId, bankAccount: bankAccount, education: education, dob: dob, fullname: fullname)
     }
 
     @objc func doneDobTapped() {

@@ -23,6 +23,9 @@ class DataDiriPresenter: DataDiriViewToPresenter {
     var educationArray: [String] = [Education.SD.rawValue, Education.SMP.rawValue, Education.SMA.rawValue,
     Education.S1.rawValue, Education.S2.rawValue, Education.S3.rawValue]
 
+    var dataDiriArray: [String] = []
+    var dataDiriEntity: DataDiriEntity = DataDiriEntity()
+
     init(view: DataDiriPresenterToView?) {
         self.view = view
     }
@@ -49,16 +52,23 @@ class DataDiriPresenter: DataDiriViewToPresenter {
         }
     }
 
-    func validateAllField(nationalId: Int, bankAccount: Int, education: Int, dob: Int) {
-        if nationalId == 16 && bankAccount >= 8 && education > 0 && dob > 0 {
+    func validateAllField(nationalId: String, bankAccount: String, education: String, dob: String, fullname: String) {
+        if nationalId.count == 16 && bankAccount.count >= 8 && education.count > 0 && dob.count > 0 {
+            dataDiriEntity.nationalId = nationalId
+            dataDiriEntity.bankAccount = bankAccount
+            dataDiriEntity.education = education
+            dataDiriEntity.dob = dob
+            dataDiriEntity.fullname = fullname
+            let dataDiriEncoded = try? JSONEncoder().encode(dataDiriEntity)
+            UserDefaults.standard.set(dataDiriEncoded, forKey: "dataDiriEntity")
             view?.goToAlamatKtpPage()
-        } else if nationalId != 16 {
+        } else if nationalId.count != 16 {
             view?.showSnackbarError(messsage: "national id must have 16 characters")
-        } else if bankAccount < 8 {
+        } else if bankAccount.count < 8 {
             view?.showSnackbarError(messsage: "bank account must have minimum 8 characters")
-        } else if education == 0 {
+        } else if education.count == 0 {
             view?.showSnackbarError(messsage: "education cannot be empty")
-        } else if dob == 0 {
+        } else if dob.count == 0 {
             view?.showSnackbarError(messsage: "dob cannot be empty")
         }
     }

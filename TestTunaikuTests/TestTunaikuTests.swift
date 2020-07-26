@@ -35,10 +35,11 @@ class DataDiriUnitTest: QuickSpec {
 
             beforeEach {
                 viewMock = DataDiriViewMock()
-                sut = DataDiriPresenter(view: viewMock)
+                sut = DataDiriPresenter()
                 educationArrayMock = [Education.SD.rawValue, Education.SMP.rawValue, Education.SMA.rawValue,
                 Education.S1.rawValue, Education.S2.rawValue, Education.S3.rawValue]
                 sut.educationArray = educationArrayMock
+                sut.view = viewMock
             }
 
             context("numberOfEducationRow function is called") {

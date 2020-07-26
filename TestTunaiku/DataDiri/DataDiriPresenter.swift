@@ -26,9 +26,7 @@ class DataDiriPresenter: DataDiriViewToPresenter {
     var dataDiriArray: [String] = []
     var dataDiriEntity: DataDiriEntity = DataDiriEntity()
 
-    init(view: DataDiriPresenterToView?) {
-        self.view = view
-    }
+    init() { }
 
     func validateNumber(replacementString: String, textCount: Int) -> Bool {
         let aSet = NSCharacterSet(charactersIn:"0123456789").inverted

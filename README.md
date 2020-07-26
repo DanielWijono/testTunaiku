@@ -1,7 +1,8 @@
 # iOS Registration Project with VIPER architecture
-![Simulator Screen Shot - iPhone SE (2nd generation) - 2020-07-26 at 22 56 28](https://user-images.githubusercontent.com/23281857/88483665-87943280-cf93-11ea-805e-98f3c39290e0.png)
-![Simulator Screen Shot - iPhone SE (2nd generation) - 2020-07-26 at 22 57 09](https://user-images.githubusercontent.com/23281857/88483664-86fb9c00-cf93-11ea-9b1f-fca7a3859713.png)
-![Simulator Screen Shot - iPhone SE (2nd generation) - 2020-07-26 at 22 57 13](https://user-images.githubusercontent.com/23281857/88483663-83681500-cf93-11ea-85f8-d21ca078f928.png)
+
+![Simulator Screen Shot - iPhone SE (2nd generation) - 2020-07-26 at 22 57 09](https://user-images.githubusercontent.com/23281857/88483918-28372200-cf95-11ea-9217-9451cf457249.png)
+![Simulator Screen Shot - iPhone SE (2nd generation) - 2020-07-26 at 22 56 28](https://user-images.githubusercontent.com/23281857/88483917-279e8b80-cf95-11ea-95ed-a23d8b17f916.png)
+![Simulator Screen Shot - iPhone SE (2nd generation) - 2020-07-26 at 22 57 13](https://user-images.githubusercontent.com/23281857/88483916-24a39b00-cf95-11ea-928f-cd75525fd038.png)
 
 # Description
 

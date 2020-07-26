@@ -34,9 +34,16 @@ class CompleteDataViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = CompleteDataPresenter(view: self)
+        dependencyInjection()
         presenter?.getData()
         self.title = "Complete Data Page"
+    }
+
+    func dependencyInjection() {
+        let view = self
+        let presenter = CompleteDataPresenter()
+        view.presenter = presenter
+        presenter.view = view
     }
 }
 

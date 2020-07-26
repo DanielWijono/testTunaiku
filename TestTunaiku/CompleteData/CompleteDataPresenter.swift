@@ -11,9 +11,7 @@ import Foundation
 class CompleteDataPresenter: CompleteDataViewToPresenter {
     var view: CompleteDataPresenterToView?
 
-    init(view: CompleteDataPresenterToView?) {
-        self.view = view
-    }
+    init() { }
 
     var dataDiriArray: DataDiriEntity = DataDiriEntity()
     var alamatKtpArray: AlamatKtpEntity = AlamatKtpEntity()

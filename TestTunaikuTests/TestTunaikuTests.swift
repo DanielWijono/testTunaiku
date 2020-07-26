@@ -91,42 +91,35 @@ class DataDiriUnitTest: QuickSpec {
 
             context("validateAllField function is called") {
                 it("test happy flow, function must run successfully") {
-                    sut.validateAllField(nationalId: 16, bankAccount: 10, education: 3, dob: 3)
+                    sut.validateAllField(nationalId: "1234567890123456", bankAccount: "5657538585", education: "S1", dob: "26-02-2020", fullname: "lalala")
                     expect(viewMock.isGoToAlamatKtpPageCalled).to(beTrue())
                 }
             }
 
             context("validateAllField function is called") {
                 it("test national id failed case, function must run successfully") {
-                    sut.validateAllField(nationalId: 10, bankAccount: 10, education: 3, dob: 3)
+                    sut.validateAllField(nationalId: "1234567890", bankAccount: "5657538585", education: "S1", dob: "26-02-2020", fullname: "lalala")
                     expect(viewMock.isShowSnackbarErrorCalled).to(equal(false))
                 }
             }
 
             context("validateAllField function is called") {
                 it("test bank account failed case , function must run successfully") {
-                    sut.validateAllField(nationalId: 16, bankAccount: 6, education: 3, dob: 3)
-                    expect(viewMock.isShowSnackbarErrorCalled).to(equal(false))
-                }
-            }
-
-            context("validateAllField function is called") {
-                it("test bank account failed case , function must run successfully") {
-                    sut.validateAllField(nationalId: 16, bankAccount: 6, education: 3, dob: 3)
+                    sut.validateAllField(nationalId: "1234567890123456", bankAccount: "565", education: "S1", dob: "26-02-2020", fullname: "lalala")
                     expect(viewMock.isShowSnackbarErrorCalled).to(equal(false))
                 }
             }
 
             context("validateAllField function is called") {
                 it("test education failed case , function must run successfully") {
-                    sut.validateAllField(nationalId: 16, bankAccount: 10, education: 0, dob: 3)
+                    sut.validateAllField(nationalId: "1234567890123456", bankAccount: "5657538585", education: "", dob: "26-02-2020", fullname: "lalala")
                     expect(viewMock.isShowSnackbarErrorCalled).to(equal(false))
                 }
             }
 
             context("validateAllField function is called") {
                 it("test dob failed case , function must run successfully") {
-                    sut.validateAllField(nationalId: 16, bankAccount: 10, education: 3, dob: 0)
+                    sut.validateAllField(nationalId: "1234567890123456", bankAccount: "5657538585", education: "S1", dob: "", fullname: "lalala")
                     expect(viewMock.isShowSnackbarErrorCalled).to(equal(false))
                 }
             }

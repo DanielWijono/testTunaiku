@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class AlamatKtpInteractor: AlamatKtpPresenterToInteractor {
+    var presenter: AlamatKtpInteractorToPresenter?
+
+    init(presenter: AlamatKtpInteractorToPresenter?) {
+        self.presenter = presenter
+    }
+}

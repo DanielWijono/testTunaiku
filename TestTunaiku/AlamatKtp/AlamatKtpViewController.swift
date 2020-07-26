@@ -23,7 +23,9 @@ class AlamatKtpViewController: UIViewController {
     override func viewDidLoad() {
         presenter = AlamatKtpPresenter(view: self)
         setupDelegation()
+        presenter?.didLoad()
         setupView()
+
     }
 
     func setupView() {
@@ -59,6 +61,8 @@ class AlamatKtpViewController: UIViewController {
         provinceTf.delegate = self
         pickerViewHousing.delegate = self
         pickerViewProvince.delegate = self
+        pickerViewHousing.dataSource = self
+        pickerViewProvince.dataSource = self
     }
 
     @objc func submitButtonClicked() {
@@ -72,24 +76,35 @@ class AlamatKtpViewController: UIViewController {
 }
 
 extension AlamatKtpViewController: AlamatKtpPresenterToView {
-
+    func pickerViewReloadData() {
+        pickerViewProvince.reloadAllComponents()
+        pickerViewHousing.reloadAllComponents()
+    }
 }
 
-extension AlamatKtpViewController: UIPickerViewDelegate {
+extension AlamatKtpViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 2
+        if pickerView == pickerViewHousing {
+            return presenter?.numberOfHousingRow() ?? 0
+        } //must have else for province picker later
+        return 0
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "lalala"
+        if pickerView == pickerViewHousing {
+            return presenter?.titleHousingAt(row: row)
+        } //must have else for province picker later
+        return ""
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //educationTextfield.text = presenter?.titleEducationAt(row: row)
+        if pickerView == pickerViewHousing {
+            housingTypeTf.text = presenter?.titleHousingAt(row: row)
+        } //must have else for province picker later
     }
 }
 
@@ -97,8 +112,7 @@ extension AlamatKtpViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == domicileAddressTf {
             guard let text = textField.text else { return false }
-            //return presenter?.validateNumber(replacementString: string, textCount: text.count) ?? false
-            return true
+            return presenter?.validateLength(textCount: text.count) ?? false
         } else if textField == numberAddressTf {
             return true
         }

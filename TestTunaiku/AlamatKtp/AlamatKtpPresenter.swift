@@ -25,13 +25,16 @@ class AlamatKtpPresenter: AlamatKtpViewToPresenter {
         self.interactor = interactor
     }
 
-    var housingTypeArray: [String] = []
+    init(view: AlamatKtpPresenterToView?, interactor: AlamatKtpPresenterToInteractor?) {
+        self.view = view
+        self.interactor = interactor
+    }
+
+    var housingTypeArray: [String] = [HousingType.Rumah.rawValue, HousingType.Kantor.rawValue]
     var provinceArray: [Province] = []
 
     func didLoad() {
         interactor = AlamatKtpInteractor(presenter: self)
-        housingTypeArray.append(HousingType.Rumah.rawValue)
-        housingTypeArray.append(HousingType.Kantor.rawValue)
         interactor?.getProvince()
         view?.pickerViewReloadData()
     }
